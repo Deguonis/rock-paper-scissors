@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+/*	border: 1px dotted darkred;*/
+}
+
+:root {
+	--titleFont: "Times New Roman", Times, serif;
+	--generalFont: Arial, Helvetica, sans-serif;
+	--textColor: white;
+	--primaryColor:#e4a60a;		/*yellow*/
+	--secondaryColor:#0a874f;	/*green*/
+	--humanColor:#1ba5b2;  		/* blue*/
+	--computerColor:#f5071f;	/* red */
+}
+
+html,
+body {
+	min-height: 100vh;
+}
+
+body {
+	background: var(--primaryColor);
+	font-family: var(--generalFont);
+	font-size: 1.75rem;
+	text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, .8);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+main {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.title {
+	text-align: center;
+	color: var(--textColor);
+	font-family: var(--titleFont);
+	font-size: 2rem;
+}
+
+.leaderboard {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+	color: var(--textColor);
+	text-align: center;
+	min-height: 10rem;
+	align-items: flex-end;
+	gap: 1.125rem;
+}
+
+.your-score,
+.pc-score {
+	flex: 1 1 25%;
+	font-size: 1.125rem;
+	align-self: stretch;
+	border: 0.1rem solid var(--secondaryColor);
+	box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, .8);
+}
+
+#userScore,
+#computerScore {
+	font-size: 5rem;
+}
+
+#userScore {
+	color: var(--humanColor);
+}
+
+#computerScore {
+	color: var(--computerColor);
+}
+
+.monitor {
+	flex: 1 1 50%;
+	align-self: center;
+	font-size: 2rem;
+	border: 0.1rem solid var(--secondaryColor);
+	box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, .8);
+	align-self: stretch;
+	align-content: center;
+}
+
+.options {
+	padding: 2rem 0;
+	max-width: 500px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rock,
+.paper,
+.scissors {
+	flex: 0 1 150px;
+	text-align: center;
+	align-content: center;
+	font-size: 3rem;
+	cursor: pointer;
+}
+
+.rock {
+	background: var(--computerColor);
+}
+
+.paper {
+	background: var(--humanColor);
+}
+
+.scissors {
+	background: var(--secondaryColor);
+}
+
+#roundResults {
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.25rem;
+	padding: 1rem 0;
+	color: var(--textColor);
+	text-align: center;
+	align-self: center;
+	font-size: 2rem;
+}
+
+footer {
+	text-align: center;
+	color: var(--textColor);
+	font-size: 1.125rem;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--secondaryColor);
+}

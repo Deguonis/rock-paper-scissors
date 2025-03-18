@@ -3,64 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Rock Paper Scissors</title>
+	<title>"Rock Paper Scissors" GAME</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<main>
+		<div class="title">
+			<h1>Rock Paper Scissors GAME</h1>
+		</div>
 
-	<script type="text/javascript">
+		<div class="leaderboard">
+			<div class="your-score">
+				<div id="userScore"></div>
+				<p>Your Score</p>
+			</div>
+			<div class="monitor">
+				<p>First to 5 wins</p>
+			</div>
+			<div class="pc-score">
+				<div id="computerScore"></div>
+				<p>Computer Score</p>
+			</div>
+		</div>
 
-		function getHumanChoice() {
-			let input = prompt("Whats your choice?",);
-			let inputLower = input.toLowerCase();
+		<div id="roundResults" style="display: none;">
+			<div id="roundStatus"></div>
+			<div id="roundInfo"></div>
+		</div>
 
-			return inputLower;
-		}
+		<div class="options">
+			<button id="rock" class="rock">👊</button>
+			<button id="paper" class="paper">🖐</button>
+			<button id="scissors" class="scissors">✌</button>
+		</div>
+	</main>
 
-		function getComputerChoice() {
-			let choise = Math.floor(Math.random() * 3)
-
-			if (choise === 0) {
-				choise = "rock";
-			} else if (choise === 1) {
-				choise = "paper";
-			} else {
-				choise = "scissors";
-			}
-
-			return choise;
-		}
-
-		function playGame() {
-			let humanScore = 0;
-			let computerScore = 0;
-
-			function playRound(humanChoise, computerChoise) {
-			let humanChoice = getHumanChoice();
-			let computerChoice = getComputerChoice();
-
-			if (humanChoice === computerChoice) {
-				console.log("Tie");
-			} else if ((humanChoice === "rock" && computerChoice === "paper")
-				|| (humanChoice === "paper" && computerChoice === "scissors")
-				|| (humanChoice === "scissors" && computerChoice === "rock")) {
-				console.log("you lose");
-				computerScore++;
-			} else {
-				console.log("you win");
-				humanScore++;
-			}
-			}
-
-			let i = 0;
-			for (;i < 5; i++) {
-				playRound();
-				console.log(`Your score - ${humanScore}`);
-				console.log(`Computer score - ${computerScore}`);
-			}
-		}
-
-		playGame()
-	</script>
+	<footer>Created by Laurynas for <a href="https://www.theodinproject.com/">The Odin Project</a></footer>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
